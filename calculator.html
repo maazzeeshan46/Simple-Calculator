@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+  </head>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0px;
+      padding: 0px;
+      transition: all 0.3s ease-in-out;
+    }
+    .container {
+      padding: 10px;
+    }
+    body {
+      background-image: url(https://images.unsplash.com/photo-1557683304-673a23048d34?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .title {
+      text-align: center;
+      padding-top: 15px;
+    }
+    button:hover {
+      border: transparent;
+      background-color: rgb(255, 167, 4);
+      box-shadow: 2px 2px 5px rgb(255, 204, 0);
+      transition:
+        background-color 1s,
+        box-shadow 0.5s;
+    }
+    button:active {
+      transform: scale(1.22);
+      transition: transform 1s;
+    }
+  </style>
+  <body class="grid h-screen justify-center items-center">
+    <div
+      class="container flex flex-col items-center gap-6 md:gap-9 w-75 h-90 sm:w-90 sm:h-100 md:w-125 md:h-115 rounded-2xl shadow shadow-lg shadow-black bg-slate-900"
+    >
+      <div class="title">
+        <h1 class="text-lg sm:text-xl md:text-3xl mt-2 font-bold text-white">
+          CALCULATOR
+        </h1>
+      </div>
+      <!-- Input 1 -->
+      <div class="input">
+        <input
+          class="w-65 sm:w-80 md:w-115 md:h-10 p-4 text-center rounded-lg text-lg md:text-xl font-bold bg-slate-700 text-gray-200"
+          id="num-1"
+          type="number"
+          required
+          placeholder="Enter your First Number"
+        />
+      </div>
+      <!-- Input2 -->
+      <div class="input">
+        <input
+          class="w-65 sm:w-80 md:w-115 md:h-10 p-4 text-center rounded-lg text-lg md:text-xl font-bold bg-slate-700 text-gray-200"
+          id="num-2"
+          type="number"
+          required
+          placeholder="Enter your second Number"
+        />
+      </div>
+      <!-- Operator -->
+      <div class="grid grid-cols-2 gap-5">
+        <button
+          class="border border-black w-20 sm:w-35 md:w-40 h-10 p-4 text-center rounded-2xl text-xl font-bold md:text-2xl text-center bg-blue-400 text-white"
+          onclick="addition()"
+        >
+          +
+        </button>
+        <button
+          class="border border-black w-20 sm:w-35 md:w-40 h-10 p-4 text-center rounded-2xl text-xl font-bold md:text-2xl text-center bg-blue-400 text-white"
+          onclick="subtraction()"
+        >
+          -
+        </button>
+        <button
+          class="border border-black w-20 sm:w-35 md:w-40 h-10 p-4 text-center rounded-2xl text-xl font-bold md:text-2xl text-center bg-blue-400 text-white"
+          onclick="multiplication()"
+        >
+          x
+        </button>
+        <button
+          class="border border-black w-20 sm:w-35 md:w-40 h-10 p-4 text-center rounded-2xl text-xl font-bold md:text-2xl text-center bg-blue-400 text-white"
+          onclick="division()"
+        >
+          /
+        </button>
+      </div>
+      <!-- Result -->
+      <div
+        class="flex flex-col gap-0 text-center border border-black w-65 sm:w-80 md:w-115 h-15 md:h-20 rounded-2xl bg-slate-600"
+      >
+        <h1 class="text-lg sm:text-lg md:text-2xl mt-2 font-bold text-gray-200">
+          Result
+        </h1>
+        <div
+          class="result text-2xl md:text-3xl font-bold mt-4 text-amber-300"
+          id="display"
+        ></div>
+      </div>
+    </div>
+    <script src="script(2).js"></script>
+  </body>
+</html>
